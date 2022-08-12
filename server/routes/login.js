@@ -7,8 +7,8 @@ router.get('/', function(req, res){
 })
 
 router.post('/', passport.authenticate('local',{
-    successRedirect: '/',
-    failureRedirect: '/login'
+    successRedirect: '/main',
+    failureRedirect: '/'
 }))
 
 module.exports = router
