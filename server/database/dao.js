@@ -8,12 +8,18 @@ const mysql = require('mysql2');
   database: 'login'
 }); */
 
-const connection = mysql.createConnection({
+const connection = mysql.createPool({
     host: 'localhost',
     user: 'root',
     database: 'main',
-    password: 'Mysqlsenha23-42'
+    password: 'Mysqlsenha23-42',
+    connectionLimit: 10,
+    queueLimit: 0
 });
+
+// connection.promise().query('select * from users').then( ([rows]) => {
+//     console.log(rows)
+// })
 
 module.exports = {
     findById: function (id){
@@ -22,5 +28,17 @@ module.exports = {
 
     findByUsername: function (username){
         return connection.promise().query('select * from users where login=?', [username])
+    }, 
+    save: function(user){
+
+    },
+    update: function(user){
+
+    },
+    remove: function(id){
+
+    },
+    list: function(){
+        return connection.promise().query('select * from livros')
     }
 }
