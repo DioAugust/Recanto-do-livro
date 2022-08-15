@@ -12,12 +12,18 @@
 
     <div class="container">
       <nav class="navbar navbar-light">
+        <a href="/cadlivro" class=" col-1 btn btn-primary">Novo</a>
 
-          <a class="col-3 navbar-brand" href="#">
-            <img src="nodejs.png" width="50%" alt="">
-          </a>
-          <h1 class="col-8">Listagem de Livros</h1>
-          <a href="/cadlivro" class="btn btn-primary">Novo</a>
+          <h1 class="col-4">Listagem de Livros</h1>
+
+          <form method="GET" class="col-3 row" action="/main/search">
+            <div class="col-auto">
+              <input type="search" name="titulo" class="form-control" placeholder="Search...">
+            </div>
+            <button type="submit" class="col-auto btn btn-primary"><i class="bi bi-search"></i></button>
+          </form>
+            
+          
       </nav>
       <div class="row">
 
@@ -59,6 +65,7 @@
                     <input type="hidden" name="id" value="<%= livro.id %>">
                     <button type="submit" class="btn btn-danger"><i class="bi bi-trash"></i></button>
                    </form>
+                   <a class="btn btn-info" href="/cadlivro?id=<%= livro.id %>">Editar</a>
                 </td>
               </tr>
             <% } %>

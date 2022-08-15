@@ -23,34 +23,35 @@
       </nav>
 
         <form method="post" action="/cadlivro/save">
+          <input type="hidden" name="id" value= "<%= livro.id %>">
           <div class="form-group row">
             <label class="col-sm-2 col-form-label">Titulo</label>
             <div class="col-sm-10">
-              <input type="text" class="form-control" name="titulo" value="">
+              <input type="text" class="form-control" name="titulo" value='<%= livro.titulo %>' >
             </div>
           </div>
           <div class="form-group row">
             <label class="col-sm-2 col-form-label">Ano</label>
             <div class="col-sm-10">
-              <input type="year" class="form-control" name="ano" value="">
+              <input type="year" class="form-control" name="ano" value="<%= livro.ano %>">
             </div>
           </div>
           <div class="form-group row">
             <label class="col-sm-2 col-form-label">Autor</label>
             <div class="col-sm-10">
-              <input type="text" class="form-control" name="autor" value="">
+              <input type="text" class="form-control" name="autor" value="<%= livro.autor %>">
             </div>
           </div>
           <div class="form-group row">
             <label class="col-sm-2 col-form-label">Editora</label>
             <div class="col-sm-10">
-              <input type="text" class="form-control" name="editora" value="">
+              <input type="text" class="form-control" name="editora" value="<%= livro.editora %>">
             </div>
           </div>
           <div class="form-group row">
             <label class="col-sm-2 col-form-label">N exemplares</label>
             <div class="col-sm-10">
-              <input type="text" class="form-control" name="n_exemplares" value="">
+              <input type="text" class="form-control" name="n_exemplares" value="<%= livro.n_exemplares %>">
             </div>
           </div>
 

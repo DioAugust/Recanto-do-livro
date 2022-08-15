@@ -21,6 +21,7 @@ module.exports = function(passport){
         usernameField: 'username',
         passwordField: 'password'
       }
+
       passport.use(new LocalStrategy(strategyConfig, function(username, password, done){
         dao.findByUsername(username)
           .then( ([rows]) => {
