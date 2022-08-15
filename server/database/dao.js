@@ -1,21 +1,21 @@
 const mysql = require('mysql2');
 
-/*const connection = mysql.createConnection({
+const connection = mysql.createConnection({
   host: 'localhost',
   user: 'root',
   password: 'example',
   database: 'test',
   database: 'login'
-}); */
+}); 
 
-const connection = mysql.createPool({
+/*const connection = mysql.createPool({
     host: 'localhost',
     user: 'root',
     database: 'main',
     password: 'Mysqlsenha23-42',
     connectionLimit: 10,
     queueLimit: 0
-});
+});*/
 
 // connection.promise().query('select * from users').then( ([rows]) => {
 //     console.log(rows)
