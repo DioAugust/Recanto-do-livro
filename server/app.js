@@ -4,6 +4,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var session = require('express-session');
+var flash = require('express-flash');
 
 const passport = require('passport');
 
@@ -18,12 +19,15 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../client/public')));
 
+
 app.use(session({
   secret: 'noSoSecret',
   cookies: { maxAge: 2 * 60 * 1000 },
   resave: false,
   saveUninitialized: false
 }))
+app.use(flash());
+
 app.use(passport.initialize())
 app.use(passport.session())
 

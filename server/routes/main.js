@@ -10,7 +10,22 @@ router.get('/', function(req, response, next) {
     console.log(err)
     response.render('main', {livros: []})
   })
-
 });
+
+router.post('/delete', function(request, response, next) {
+  dao.remove(request.body.id).then( ([result]) => {
+    if(result.affectedRows > 0) {
+      request.flash('sucess', 'Aluno excluido com sucesso')
+    } else {
+      request.flash('error', `Nao foi encontrado no banco aluno com id = ${request.body.id}`)
+    }
+    response.redirect('/main')
+  }).catch(err => {
+    console.log(err)
+    request.flash('error', 'Ocorreu um erro durante a exclusao do aluno.')
+    response.redirect('/main')
+  });
+  
+})
 
 module.exports = router;

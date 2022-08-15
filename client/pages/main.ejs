@@ -17,8 +17,22 @@
             <img src="nodejs.png" width="50%" alt="">
           </a>
           <h1 class="col-8">Listagem de Livros</h1>
+          <a href="/cadlivro" class="btn btn-primary">Novo</a>
       </nav>
       <div class="row">
+
+        <% if ( locals.messages.sucess ) { %>
+          <div class="alert alert-success" role="alert">
+            <%= locals.messages.sucess %>
+          </div>
+        <% } %>
+
+        <% if ( locals.messages.error ) { %>
+          <div class="alert alert-danger" role="alert">
+            <%= locals.messages.error %>
+          </div>
+        <% } %>
+
         <table class="table table-striped">
           <thead>
             <tr>

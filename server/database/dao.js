@@ -29,16 +29,19 @@ module.exports = {
     findByUsername: function (username){
         return connection.promise().query('select * from users where login=?', [username])
     }, 
-    save: function(user){
-
+    saveLivro: function(livro){
+        return connection.promise().execute('INSERT INTO livros (titulo, ano, autor, editora, n_exemplares) VALUES (?, ?, ?, ?, ?)', [ livro.titulo, livro.ano, livro.autor, livro.editora, livro.n_exemplares])
     },
     update: function(user){
 
     },
     remove: function(id){
-
+        return connection.promise().execute('delete from livros where id=?', [id])
     },
     list: function(){
         return connection.promise().query('select * from livros')
+    },
+    saveUser: function(user){
+        return connection.promise().execute('insert into ')
     }
 }
