@@ -1,8 +1,8 @@
 module.exports = function(passport){
-
+    const bcryptjs = require('bcryptjs');
     const LocalStrategy = require('passport-local').Strategy
     let dao = require('../database/dao')
-
+    
     passport.serializeUser( function(user, done){
         done(null, user.id)
       })
@@ -28,7 +28,7 @@ module.exports = function(passport){
           if ( rows.length == 0) return done(null, false)
           
           let user = rows[0]
-          if (user.password != password) return done(null, false)
+          if (bcryptjs.compareSync(user.password, password)) return done(null, false)
           else return done(null, user)
         }).catch(err =>{
           console.log(err)

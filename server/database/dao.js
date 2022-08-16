@@ -1,21 +1,24 @@
 const mysql = require('mysql2');
+const bcryptjs = require('bcryptjs');
+var salt = bcryptjs.genSaltSync(10);
 
-const connection = mysql.createConnection({
-   host: 'localhost',
-   user: 'root',
-   password: 'example',
-   database: 'test',
-   database: 'login'
-}); 
 
-/*const connection = mysql.createPool({
+// const connection = mysql.createConnection({
+//    host: 'localhost',
+//    user: 'root',
+//    password: 'example',
+//    database: 'test',
+//    database: 'login'
+// }); 
+
+const connection = mysql.createPool({
     host: 'localhost',
     user: 'root',
     database: 'main',
     password: 'Mysqlsenha23-42',
     connectionLimit: 10,
     queueLimit: 0
-});*/
+});
 
 
 module.exports = {
@@ -42,7 +45,7 @@ module.exports = {
         return connection.promise().query('select * from livros')
     },
     saveUser: function(user){
-        return connection.promise().execute('insert into ')
+        return connection.promise().execute('INSERT INTO users (name, login, password) VALUES (?, ?, ?)', [user.nome, user.login, bcryptjs.hashSync(user.password, salt)])
     },
     search: function(titulo){
         return connection.promise().query('select * from livros where titulo like ?', [ "%" + titulo + "%"])

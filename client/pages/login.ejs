@@ -104,16 +104,19 @@
      </p>
     <% } %>
 
-    <form action="/" method="POST">
+   
         <div class="container">
             <div class="box">
+                <form action="/" method="POST">
                 <h1>Login</h1>
                 <input type="text" name="username" id="user">
                 <input type="password" name="password" id="passwd">
                 <input type="submit" value="Login" id="log">
-                <a href="#" class="nav-cad"><button class="cad">Cadastrar</button></a>
+                </form>
+                <form method="get" action="/cadastro" type="hidden">
+                     <button type="submit" class="cad">Cadastrar</button>
+                </form>
             </div>
         </div>
-    </form>
 </body>
 </html>
