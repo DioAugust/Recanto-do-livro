@@ -61,7 +61,7 @@
     #passwd:hover{
         background-color: rgb(231, 231, 231);
     }
-    #sub{
+    #log{
         width: 150px;
         height: 30px;
         cursor: pointer;
@@ -72,7 +72,24 @@
         color: white;
         transition: 0.5s;
     }
-    #sub:hover{
+    #log:hover{
+        transition: 0.5s;
+        background-color: #607EAA;
+        box-shadow: 0 0 0;
+    }
+    .cad{
+        width: 150px;
+        height: 30px;
+        cursor: pointer;
+        border-radius: 10px;
+        border: none;
+        box-shadow: 5px 10px 10px gray;
+        background: #1C3879;
+        color: white;
+        transition: 0.5s;
+        margin-top: 10px;
+    }
+    .cad:hover{
         transition: 0.5s;
         background-color: #607EAA;
         box-shadow: 0 0 0;
@@ -93,7 +110,8 @@
                 <h1>Login</h1>
                 <input type="text" name="username" id="user">
                 <input type="password" name="password" id="passwd">
-                <input type="submit" value="Login" id="sub">
+                <input type="submit" value="Login" id="log">
+                <a href="#" class="nav-cad"><button class="cad">Cadastrar</button></a>
             </div>
         </div>
     </form>
