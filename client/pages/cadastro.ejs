@@ -10,38 +10,40 @@
 
   </head>
   <body>
+    <style>
+      form {
+        margin-top: 150px;
+      }
+    </style>
     <div class="container">
       <nav class="navbar navbar-light">
         <div class="voltar">
-          <a href="/" class="btn btn-primary">voltar</a>
+          <a href="/" class=" btn btn-success">voltar</a>
         </div>
-          <a class="col-3 navbar-brand" href="#">
-            <img src="nodejs.png" width="50%" alt="">
-          </a>
           <h1 class="col-8">Cadastro de Usuarios</h1>
       </nav>
 
-        <form method="post" action="/cadastro/save" class="cad-nav">
+        <form method="post" action="/cadastro/save" class="cad-nav container text-center col-sm-8">
           <div class="form-group row">
-            <label class="col-sm-2 col-form-label">Nome</label>
-            <div class="col-sm-10">
+            <label class="col-sm-3 col-form-label">Nome</label>
+            <div class="col-sm-6">
               <input type="text" name="nome" class="form-control">
             </div>
           </div>
           <div class="form-group row">
-            <label class="col-sm-2 col-form-label">Login</label>
-            <div class="col-sm-10">
+            <label class="col-sm-3 col-form-label">Login</label>
+            <div class="col-sm-6">
               <input type="text" name="login" class="form-control">
             </div>
           </div>
           <div class="form-group row">
-            <label class="col-sm-2 col-form-label">Senha</label>
-            <div class="col-sm-10">
+            <label class="col-sm-3 col-form-label">Senha</label>
+            <div class="col-sm-6">
               <input type="password" name="password" class="form-control">
             </div>
           </div>
 
-          <button type="submit" class="btn btn-primary" name="button">Salvar</button>
+          <button type="submit" class="col-6 btn btn-success" name="button">Salvar</button>
         </form>
 
     </div>

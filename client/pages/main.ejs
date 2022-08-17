@@ -9,12 +9,12 @@
   </head>
   <body>
 
-
     <div class="container">
       <nav class="navbar navbar-light">
-        <a href="/cadlivro" class=" col-1 btn btn-primary">Novo</a>
         <div class="voltar">
-          <a href="/" class="btn btn-primary">Deslogar</a>
+          <form action="/logout" method="post" type="hidden">
+            <button class="btn btn-danger"><i class="bi bi-box-arrow-left"></i></button>
+          </form>
         </div>
 
           <h1 class="col-4">Listagem de Livros</h1>
@@ -25,6 +25,7 @@
             </div>
             <button type="submit" class="col-auto btn btn-primary"><i class="bi bi-search"></i></button>
           </form>
+          <a href="/cadlivro" class=" col-1 btn btn-success">Novo</a>
             
           
       </nav>

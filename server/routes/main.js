@@ -30,6 +30,8 @@ router.post('/delete', function(request, response, next) {
   
 })
 
+
+
 router.get('/search', function(request, response) {
   if (request.query.titulo) {
     dao.search(request.query.titulo).then(([rows]) => {

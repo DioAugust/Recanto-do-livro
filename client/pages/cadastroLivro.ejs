@@ -2,7 +2,7 @@
 <html lang="pt-br" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Cadastro de livro</title>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -11,53 +11,55 @@
 
   </head>
   <body>
+    <style>
+      form {
+        margin-top: 150px;
+      }
+    </style>
 
 
     <div class="container">
       <nav class="navbar navbar-light">
         <div class="voltar">
-          <a href="./main" class="btn btn-primary">voltar</a>
+          <a href="./main" class="btn btn-success">Voltar</a>
         </div>
-          <a class="col-3 navbar-brand" href="#">
-            <img src="nodejs.png" width="50%" alt="">
-          </a>
           <h1 class="col-8">Cadastro de livros</h1>
       </nav>
 
-        <form method="post" action="/cadlivro/save">
+        <form class="container text-center col-sm-8" method="post" action="/cadlivro/save">
           <input type="hidden" name="id" value= "<%= livro.id %>">
           <div class="form-group row">
-            <label class="col-sm-2 col-form-label">Titulo</label>
-            <div class="col-sm-10">
+            <label class="col-sm-3 col-form-label">Titulo:</label>
+            <div class="col-sm-6">
               <input type="text" class="form-control" name="titulo" value='<%= livro.titulo %>' >
             </div>
           </div>
           <div class="form-group row">
-            <label class="col-sm-2 col-form-label">Ano</label>
-            <div class="col-sm-10">
+            <label class="col-sm-3 col-form-label">Ano:</label>
+            <div class="col-sm-6">
               <input type="year" class="form-control" name="ano" value="<%= livro.ano %>">
             </div>
           </div>
           <div class="form-group row">
-            <label class="col-sm-2 col-form-label">Autor</label>
-            <div class="col-sm-10">
+            <label class="col-sm-3 col-form-label">Autor:</label>
+            <div class="col-sm-6">
               <input type="text" class="form-control" name="autor" value="<%= livro.autor %>">
             </div>
           </div>
           <div class="form-group row">
-            <label class="col-sm-2 col-form-label">Editora</label>
-            <div class="col-sm-10">
+            <label class="col-sm-3 col-form-label">Editora:</label>
+            <div class="col-sm-6">
               <input type="text" class="form-control" name="editora" value="<%= livro.editora %>">
             </div>
           </div>
           <div class="form-group row">
-            <label class="col-sm-2 col-form-label">N exemplares</label>
-            <div class="col-sm-10">
+            <label class="col-sm-3 col-form-label">N exemplares:</label>
+            <div class="col-sm-6">
               <input type="text" class="form-control" name="n_exemplares" value="<%= livro.n_exemplares %>">
             </div>
           </div>
 
-          <button type="submit" class="btn btn-primary" name="button">Adicionar</button>
+          <button type="submit" class="col-6 btn btn-success" name="button">Adicionar</button>
         </form>
 
     </div>

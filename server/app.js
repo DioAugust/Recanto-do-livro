@@ -32,6 +32,13 @@ app.use(flash());
 app.use(passport.initialize())
 app.use(passport.session())
 
+app.post('/logout', function(req, res){
+  req.logout(function(err) {
+    if (err) { return next(err); }
+    res.redirect('/');
+  });
+});
+
 require('./services/auth')(passport)
 require('./routes/config')(app)
 
